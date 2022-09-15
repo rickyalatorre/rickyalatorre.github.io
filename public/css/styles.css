@@ -1,0 +1,159 @@
+
+body{
+  color:#483838;
+}
+
+.mint-black{
+  background-color:#483838 ;
+}
+
+.col{
+  background-color: pink;
+  border: 1px black solid;
+}
+
+.project-info-container{
+  padding:12px;
+}
+
+.center-text{
+  text-align: center;
+}
+
+.center{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+.container{
+  margin-bottom: 70px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px #888888;
+  background-color: white;
+}
+
+.built-logo{
+  width:135px;
+}
+
+.built-with-container{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+
+.project-image:hover{
+  opacity:0.5;
+}
+
+.built-with-container img{
+  padding:5px;
+}
+
+a img{
+  border:0.5px lightgrey solid;
+  border-radius: 5px;
+  aspect-ratio:4/3;
+}
+
+h3.center-text{
+  padding-bottom:20px;
+}
+
+.row{
+  padding:28px 0;
+}
+
+.extra-padding{
+  padding:20px;
+}
+
+.hero-shot{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+background-image: linear-gradient( rgba(28.2%,22%,22%,0.9), rgba(28.2%,22%,22%,0.9)) ,url("https://cdn.pixabay.com/photo/2016/09/04/19/25/cobweb-1644982__340.jpg");
+height:400px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+
+.hero-text-container{
+  color:mintcream;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .project-image{
+    width:100%;
+}
+
+ .container{
+   width:90%;
+ }
+
+.hero-text-container{
+  padding:20px;
+}
+
+#contact{
+  padding:0 20px;
+}
+
+.all-logo{
+  width:50px;
+}
+
+.built-logo{
+  width:80px;
+}
+
+}
+
+footer{
+  background-color: #483838;
+  padding:20px;
+}
+
+.footer-link {
+  color:mintcream;
+  text-decoration: none;
+}
+.footer-link:visited{
+  color:#42855B;
+}
+.footer-link:hover{
+  color:white;
+}
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .project-image{
+    width:100%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .project-image{
+    width:100%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+.center{
+  justify-content: flex-start;
+}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
