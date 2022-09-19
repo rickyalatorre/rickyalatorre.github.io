@@ -1,6 +1,7 @@
 
 body{
   color:#483838;
+  font-family: 'Roboto', sans-serif;
 }
 
 .mint-black{
@@ -28,9 +29,9 @@ body{
 
 .container{
   margin-bottom: 70px;
-  border-radius: 5px;
-  box-shadow: 5px 5px 15px -5px #888888;
-  background-color: white;
+  /* border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px #888888; */
+  /* background-color: white; */
 }
 
 .built-logo{
@@ -52,7 +53,7 @@ body{
   padding:5px;
 }
 
-a img{
+a .project-image{
   border:0.5px lightgrey solid;
   border-radius: 5px;
   aspect-ratio:4/3;
@@ -86,6 +87,12 @@ position: relative;
   color:mintcream;
 }
 
+.git-link-container{
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 70px;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .project-image{
@@ -100,7 +107,7 @@ position: relative;
   padding:20px;
 }
 
-#contact{
+.email-message{
   padding:0 20px;
 }
 
@@ -110,6 +117,16 @@ position: relative;
 
 .built-logo{
   width:80px;
+}
+
+.git-link-container{
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 70px;
+}
+
+.git-link-logo{
+  width:150px;
 }
 
 }
@@ -130,7 +147,9 @@ footer{
   color:white;
 }
 
+.git-link-container a{
 
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
