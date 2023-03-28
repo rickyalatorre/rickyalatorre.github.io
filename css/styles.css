@@ -4,6 +4,11 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+.logo-name{
+  margin:0;
+  text-align: center;
+  color:lightgrey;
+}
 .mint-black{
   background-color:#483838 ;
 }
@@ -35,7 +40,7 @@ body{
 }
 
 .built-logo{
-  width:135px;
+  width:100px;
 }
 
 .built-with-container{
@@ -70,7 +75,9 @@ h3.center-text{
 .extra-padding{
   padding:20px;
 }
-
+.project-description{
+  text-indent: 15px;
+}
 .hero-shot{
   display:flex;
   justify-content: center;

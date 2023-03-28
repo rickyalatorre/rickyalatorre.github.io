@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Google Fonts  -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Prata&family=Roboto" rel="stylesheet">
-<!-- <link href="https://fonts.googleapis.com/css2?family=Prata&family=Roboto&family=Ubuntu+Mono&display=swap" rel="stylesheet"> -->
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-      <!-- Font Awesome -->
-      <script src="https://kit.fontawesome.com/e75f0a9b44.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="css/styles.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Portfolio</title>
+  <!-- Google Fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Roboto" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Prata&family=Roboto&family=Ubuntu+Mono&display=swap" rel="stylesheet"> -->
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/e75f0a9b44.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
 
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-     <script type="text/javascript">
-         (function() {
-             // https://dashboard.emailjs.com/admin/account
-             emailjs.init('VJFBPJzJUaFVdC4HU');
-         })();
-     </script>
-     <script type="text/javascript">
-         window.onload = function() {
-             document.getElementById('contact-form').addEventListener('submit', function(event) {
-                 event.preventDefault();
-                 // generate a five digit number for the contact_number variable
-                 this.contact_number.value = Math.random() * 100000 | 0;
-                 // these IDs from the previous steps
-                 emailjs.sendForm('contact_ricky', 'contact_portfolio_form', this)
-                     .then(function() {
-                      let sender= document.querySelector('[name="user_name"]').value;
-                       let inputs=document.querySelectorAll('.form-control');
-                       inputs.forEach((e)=>{
-                         e.value='';
-                       });
-                       swal("Message Sent!", `Thanks for the message ${sender}. Speak to you soon!`, "success");
+  <title>Portfolio</title>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init('VJFBPJzJUaFVdC4HU');
+    })();
+  </script>
+  <script type="text/javascript">
+    window.onload = function() {
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+        this.contact_number.value = Math.random() * 100000 | 0;
+        // these IDs from the previous steps
+        emailjs.sendForm('contact_ricky', 'contact_portfolio_form', this)
+          .then(function() {
+            let sender = document.querySelector('[name="user_name"]').value;
+            let inputs = document.querySelectorAll('.form-control');
+            inputs.forEach((e) => {
+              e.value = '';
+            });
+            swal("Message Sent!", `Thanks for the message ${sender}. Speak to you soon!`, "success");
 
 
-                         console.log('SUCCESS!');
-                     }, function(error) {
+            console.log('SUCCESS!');
+          }, function(error) {
 
-                       swal("Not sent!","There seems to be an issue. Retry later.","error");
-                         console.log('FAILED...', error);
-                     });
-             });
-         }
-     </script>
+            swal("Not sent!", "There seems to be an issue. Retry later.", "error");
+            console.log('FAILED...', error);
+          });
+      });
+    }
+  </script>
 
-  </head>
+</head>
 
 <body style="background-color: mintcream;">
   <nav class="navbar navbar-expand-md mint-black navbar-dark">
@@ -67,15 +68,15 @@
           </li>
 
           <li class="nav-item dropdown">
-                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Projects
-                   </a>
-                   <ul class="dropdown-menu">
-                     <li><a class="dropdown-item" href="#cantHurtMe">Can't Hurt Me</a></li>
-                     <li><a class="dropdown-item" href="#stephsBlog">Steph's Blog</a></li>
-                     <li><a class="dropdown-item" href="#aaConstruction">AA Construction</a></li>
-                   </ul>
-          <!-- <li class="nav-item">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Projects
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#cantHurtMe">Can't Hurt Me</a></li>
+              <li><a class="dropdown-item" href="#stephsBlog">Steph's Blog</a></li>
+              <li><a class="dropdown-item" href="#aaConstruction">AA Construction</a></li>
+            </ul>
+            <!-- <li class="nav-item">
             <a class="nav-link" href="#resume">Resume</a>
           </li> -->
           <li class="nav-item">
@@ -88,178 +89,248 @@
     </div>
   </nav>
 
-<div id='aboutMe' class="hero-shot">
-  <div class="hero-text-container">
-    <h1 class='center-text'>
-      Hi i'm Ricky
-    </h1>
-    <h5 class='center-text'>
-      Web developement has opened my eyes not only to visual creativity but the creative problem solving.
-    </h5>
+  <div id='aboutMe' class="hero-shot">
+    <div class="hero-text-container">
+      <h1 class='center-text'>
+        Hi i'm Ricky
+      </h1>
+      <h5 class='center-text'>
+        Web developement has opened my eyes not only to visual creativity but the creative problem solving.
+      </h5>
+    </div>
+
   </div>
 
-</div>
 
-
-<h2 class='center-text' style='margin-top:50px;'>Projects</h2>
-<!-- ADD LIGHT-RIZER HERE  -->
-<div id='lightRizer' class="container">
-  <div class="row">
-    <h3  class='center-text'>Light Rizer</h3>
-    <div class="col-lg-6 col-md-12 col-sm-12">
-      <a href='' target="_blank">
-      <img class="project-image" src="images/light-rizer-portfolio.PNG" alt="screenshot of light-rizer">
-      </a>
-    </div>
-    <div class="col-lg-6 col-md-12 col-sm-12 project-info-container">
-      <h4 style='opacity:0.5;'>Built with</h4>
-      <div class='built-with-container'>
-          <img class="built-logo" src="images/postgre.png" alt='Postgres logo'>
-          <img class="built-logo" src="images/express-logo.png" alt='Express logo'>
-          <img class="built-logo" src="images/ejs.PNG" alt='EJS logo'>
-          <img class="built-logo" src="images/js.png" alt='JS logo'>
-          <img class='all-logo' src="images/css-3.png" alt="CSS logo">
-          <img class='all-logo' src="images/html-5.png" alt="HTML">
-      </div>
-      <p>
-        Bad Sleep can wreak havoc on life. A solution provided by neurobiologist Andrew Huberman is getting sunlight
-        in your eyes when waking up because it regulates your circadium rhythm. Having normal bedtime and wake times
-        is one of the most effective ways to get better sleep. Light Rizer will send you a reminder text when the sun
-        has rosen so you can get out and get some light.
-      </p>
-      <div class='center'>
-        <a href='' target="_blank"> <button type="button" class="btn btn-primary">code</button></a>
-        <a href='' target="_blank"><button type="button" class="btn btn-primary">live</button></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- FIRST PROJECT -->
-<div id='cantHurtMe' class="container">
-  <div class="row">
-    <h3  class='center-text'>Can't Hurt Me Challenges</h3>
-    <div class="col-lg-6 col-md-12 col-sm-12">
-      <a href='https://cant-hurt-me.herokuapp.com/' target="_blank">
-      <img class="project-image" src="images/chm-web-image.PNG" alt="cant hurt me project image">
-      </a>
-    </div>
-    <div class="col-lg-6 col-md-12 col-sm-12 project-info-container">
-      <h4 style='opacity:0.5;'>Built with</h4>
-      <div class='built-with-container'>
-          <img class="built-logo" src="images/MongoDB_Logo.svg.png" alt='mongodb logo'>
-          <img class="built-logo" src="images/express-logo.png" alt='express logo'>
-          <img class='all-logo' src="images/react.png" alt="react logo">
-          <img class='all-logo' src="images/nodejs.png" alt="node logo">
-          <img class='all-logo' src="images/bootstrap.png" alt="bootstrap logo">
-      </div>
-      <p>
-        Can't Hurt me challenges is a 10 step note writing application based on
-        the book Can't Hurt Me by David Goggins. Create an account and sign in to
-        start your journey of achieving goals.
-      </p>
-      <div class='center'>
-        <a href='https://github.com/rickyalatorre/Cant-Hurt-Me' target="_blank"> <button type="button" class="btn btn-primary">code</button></a>
-        <a href='https://cant-hurt-me.herokuapp.com/' target="_blank"><button type="button" class="btn btn-primary">live</button></a>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-<!-- SECOND PROJECT  -->
-
-<div id='stephsBlog' class="container">
-  <div class="row">
-    <h3 class='center-text'>Steph's Blog</h3>
-    <div class="col-lg-6 col-md-12 col-sm-12">
-      <a href="https://rocky-reaches-57032.herokuapp.com/" target="_blank">
-        <img  class="project-image" src="images/stephs-blog-image.PNG" alt="Stephs blog image">
-      </a>
-    </div>
-
-    <div class="col-lg-6 col-md-12 col-sm-12 project-info-container">
-      <h4 style='opacity:0.5;'>Built with</h4>
-      <div class='built-with-container'>
-        <img class="built-logo" src="images/ejs.PNG" alt="ejs logo">
-        <img class="built-logo" src="images/MongoDB_Logo.svg.png" alt="mongodb logo">
-        <img class="built-logo" src="images/express-logo.png" alt='express logo'>
-        <img class='all-logo' src="images/nodejs.png" alt=" node logo">
-        <img class='all-logo' src="images/bootstrap.png" alt="bootstrap logo">
-      </div>
-      <p>
-        Stephs blog is a blog for Vet Tech Stephanie where she can post a blog
-        about anything vet related. Through a route she can access the ability to
-        submit a blog with a title and paragraph.
-      </p>
-      <div class='center'>
-        <a href="https://github.com/rickyalatorre/Stephs-Blog" target="_blank">
-          <button type="button" class="btn btn-primary">code</button>
+  <h2 class='center-text' style='margin-top:50px;'>Projects</h2>
+  <!-- ADD LIGHT-RIZER HERE  -->
+  <div id='lightRizer' class="container">
+    <div class="row">
+      <h3 class='center-text'>Light Rizer</h3>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <a href='' target="_blank">
+          <img class="project-image" src="images/light-rizer-portfolio.PNG" alt="screenshot of light-rizer">
         </a>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 project-info-container">
+        <h4 style='opacity:0.5;'>Built with</h4>
+        <div class='built-with-container'>
+          <div>
+            <img class="built-logo" src="images/postgre.png" alt='Postgres logo'>
+            <p class='logo-name'>PostgreSQL</p>
+          </div>
+          <div>
+            <img class="built-logo" src="images/icons8-express-js.svg" alt='Express logo'>
+            <p class='logo-name'>Express</p>
+          </div>
+          <div class="">
+            <img class='built-logo' src="images/icons8-node-js.svg" alt="node logo">
+            <p class='logo-name'>NodeJS</p>
+          </div>
+          <div>
+            <img class="built-logo" src="images/ejs.svg" alt='EJS logo'>
+            <p class='logo-name'>EJS</p>
+          </div>
+          <div>
+            <img class="built-logo" src="images/icons8-javascript-logo.svg" alt='JS logo'>
+            <p class='logo-name'>Javascript</p>
+          </div>
+          <div>
+            <img class="built-logo" src="images/icons8-css3.svg" alt="CSS logo">
+            <p class='logo-name'>CSS</p>
+          </div>
+          <div>
+            <img class="built-logo" class='built-logo' src="images/icons8-html-5.svg" alt="HTML">
+            <p class='logo-name'>HTML</p>
+          </div>
+        </div>
+        <p class='project-description'>
+          Bad Sleep can wreak havoc on life. A solution provided by neurobiologist Andrew Huberman is getting sunlight
+          in your eyes when waking up because it regulates your circadium rhythm. Having normal bedtime and wake times
+          is one of the most effective ways to get better sleep. Light Rizer will send you a reminder text when the sun
+          has rosen so you can get out and get some light.
+        </p>
+        <div class='center'>
+          <a href='' target="_blank"> <button type="button" class="btn btn-primary">code</button></a>
+          <a href='' target="_blank"><button type="button" class="btn btn-primary">live</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIRST PROJECT -->
+  <div id='cantHurtMe' class="container">
+    <div class="row">
+      <h3 class='center-text'>Can't Hurt Me Challenges</h3>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <a href='https://cant-hurt-me.herokuapp.com/' target="_blank">
+          <img class="project-image" src="images/chm-web-image.PNG" alt="cant hurt me project image">
+        </a>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 project-info-container">
+        <h4 style='opacity:0.5;'>Built with</h4>
+        <div class='built-with-container'>
+          <div>
+            <img class='built-logo' src="images/icons8-react.svg" alt="react logo">
+            <p class='logo-name'>ReactJS</p>
+          </div>
+          <div>
+            <img class="built-logo" src="images/icons8-mongodb.svg" alt='mongodb logo'>
+            <p class='logo-name'>MongoDB</p>
+          </div>
+          <div>
+            <img class="built-logo" src="images/icons8-express-js.svg" alt='Express logo'>
+            <p class='logo-name'>Express</p>
+          </div>
+
+          <div class="">
+            <img class='built-logo' src="images/icons8-node-js.svg" alt="node logo">
+            <p class='logo-name'>NodeJS</p>
+          </div>
+          <div class="">
+            <img class='built-logo' src="images/icons8-bootstrap.svg" alt="bootstrap logo">
+            <p class='logo-name'>Bootstrap</p>
+          </div>
+        </div>
+        <p class='project-description'>
+          Can't Hurt me challenges is a 10 step note writing application based on
+          the book Can't Hurt Me by David Goggins. Create an account and sign in to
+          start your journey of achieving goals.
+        </p>
+        <div class='center'>
+          <a href='https://github.com/rickyalatorre/Cant-Hurt-Me' target="_blank"> <button type="button" class="btn btn-primary">code</button></a>
+          <a href='https://cant-hurt-me.herokuapp.com/' target="_blank"><button type="button" class="btn btn-primary">live</button></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SECOND PROJECT  -->
+
+  <div id='stephsBlog' class="container">
+    <div class="row">
+      <h3 class='center-text'>Steph's Blog</h3>
+      <div class="col-lg-6 col-md-12 col-sm-12">
         <a href="https://rocky-reaches-57032.herokuapp.com/" target="_blank">
-          <button type="button" class="btn btn-primary">live</button>
+          <img class="project-image" src="images/stephs-blog-image.PNG" alt="Stephs blog image">
         </a>
       </div>
 
+      <div class="col-lg-6 col-md-12 col-sm-12 project-info-container">
+        <h4 style='opacity:0.5;'>Built with</h4>
+        <div class='built-with-container'>
+          <div>
+            <img class="built-logo" src="images/ejs.svg" alt='EJS logo'>
+            <p class='logo-name'>EJS</p>
+          </div>
+          <div>
+            <img class="built-logo" src="images/icons8-mongodb.svg" alt='mongodb logo'>
+            <p class='logo-name'>MongoDB</p>
+          </div>
+          <div>
+            <img class="built-logo" src="images/icons8-express-js.svg" alt='Express logo'>
+            <p class='logo-name'>Express</p>
+          </div>
+          <div class="">
+            <img class='built-logo' src="images/icons8-node-js.svg" alt="node logo">
+            <p class='logo-name'>NodeJS</p>
+          </div>
+          <div class="">
+            <img class='built-logo' src="images/icons8-bootstrap.svg" alt="bootstrap logo">
+            <p class='logo-name'>Bootstrap</p>
+          </div>
+        </div>
+        <p class='project-description'>
+          Stephs blog is a blog for Vet Tech Stephanie where she can post a blog
+          about anything vet related. Through a route she can access the ability to
+          submit a blog with a title and paragraph.
+        </p>
+        <div class='center'>
+          <a href="https://github.com/rickyalatorre/Stephs-Blog" target="_blank">
+            <button type="button" class="btn btn-primary">code</button>
+          </a>
+          <a href="https://rocky-reaches-57032.herokuapp.com/" target="_blank">
+            <button type="button" class="btn btn-primary">live</button>
+          </a>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
 
 
-<!-- THIRD PROJECT -->
+  <!-- THIRD PROJECT -->
 
-<div id='aaConstruction' class="container">
-  <div class="row">
-    <h3 class='center-text'>AA Construction</h3>
-    <div class="col-lg-6 col-md-12 col-sm-12">
-      <a href="https://aaconstruction77.com/" target="_blank">
-        <img class="project-image" src="images/aa-website.PNG" alt="AA construction website">
-      </a>
-    </div>
-    <div class="col-lg-6 col-md-12 col-sm-12 project-info-container">
-      <h4 style='opacity:0.5;'>Built with</h4>
-      <div class='built-with-container'>
-        <img class='all-logo' src="images/js.png" alt="javascript logo">
-        <img class='all-logo' src="images/bootstrap.png" alt="bootstrap logo">
-        <img class="built-logo" src="images/express-logo.png" alt='express logo'>
-        <img class='all-logo' src="images/nodejs.png" alt="node logo">
-        <img class='all-logo' style='width:64px;' class="built-logo"  src="images/css-3.png" alt="css logo">
-        <img class='all-logo' src="images/html-5.png" alt="html logo">
-      </div>
-      <p>
-        AA construction is a website I built for my brother Adrian for his contracting business.
-      </p>
-      <div class='center'>
-        <a href="https://github.com/rickyalatorre/aaconstruction" target="_blank">
-          <button type="button" class="btn btn-primary">code</button>
-        </a>
+  <div id='aaConstruction' class="container">
+    <div class="row">
+      <h3 class='center-text'>AA Construction</h3>
+      <div class="col-lg-6 col-md-12 col-sm-12">
         <a href="https://aaconstruction77.com/" target="_blank">
-          <button type="button" class="btn btn-primary">live</button>
+          <img class="project-image" src="images/aa-website.PNG" alt="AA construction website">
         </a>
       </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 project-info-container">
+        <h4 style='opacity:0.5;'>Built with</h4>
+        <div class='built-with-container'>
+          <div>
+            <img class="built-logo" src="images/icons8-javascript-logo.svg" alt='JS logo'>
+            <p class='logo-name'>Javascript</p>
+          </div>
+          <div class="">
+            <img class='built-logo' src="images/icons8-bootstrap.svg" alt="bootstrap logo">
+            <p class='logo-name'>Bootstrap</p>
+          </div>          <div>
+            <img class="built-logo" src="images/icons8-express-js.svg" alt='Express logo'>
+            <p class='logo-name'>Express</p>
+          </div>
+          <div class="">
+            <img class='built-logo' src="images/icons8-node-js.svg" alt="node logo">
+            <p class='logo-name'>NodeJS</p>
+          </div>
+          <div>
+            <img class="built-logo" src="images/icons8-css3.svg" alt="CSS logo">
+            <p class='logo-name'>CSS</p>
+          </div>
+          <div>
+            <img class="built-logo" class='built-logo' src="images/icons8-html-5.svg" alt="HTML">
+            <p class='logo-name'>HTML</p>
+          </div>
+        </div>
+        <p class='project-description'>
+          AA construction is a website I built for my brother Adrian for his contracting business.
+        </p>
+        <div class='center'>
+          <a href="https://github.com/rickyalatorre/aaconstruction" target="_blank">
+            <button type="button" class="btn btn-primary">code</button>
+          </a>
+          <a href="https://aaconstruction77.com/" target="_blank">
+            <button type="button" class="btn btn-primary">live</button>
+          </a>
+        </div>
 
+      </div>
     </div>
   </div>
-</div>
 
 
-<!-- GITHUB LINKDEN -->
-<div id='contact' class="git-link-container">
-  <a href="https://github.com/rickyalatorre" target="_blank"><img class="git-link-logo" src="images/github.png" alt="github logo">
-</a>
+  <!-- GITHUB LINKDEN -->
+  <div id='contact' class="git-link-container">
+    <a href="https://github.com/rickyalatorre" target="_blank"><img class="git-link-logo" src="images/github.png" alt="github logo">
+    </a>
 
-  <a href="https://www.linkedin.com/in/ricardo-alatorre" target="_blank"><img class="git-link-logo" src="images/linkedin.png" alt="linkedin logo">
-</a>
-</div>
+    <a href="https://www.linkedin.com/in/ricardo-alatorre" target="_blank"><img class="git-link-logo" src="images/linkedin.png" alt="linkedin logo">
+    </a>
+  </div>
 
 
 
-<h2 class='center-text email-message'>Feel free to send me a message!</h2>
-<div class="container extra-padding">
+  <h2 class='center-text email-message'>Feel free to send me a message!</h2>
+  <div class="container extra-padding">
 
     <form id='contact-form'>
-    <input type='hidden' name='contact_number'>
+      <input type='hidden' name='contact_number'>
       <!-- NAME -->
       <div class="mb-3">
         <label class="form-label">Name</label>
@@ -271,24 +342,25 @@
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input type="email" name='user_email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
       </div>
-<!-- Text Area -->
+      <!-- Text Area -->
       <div class="mb-3">
         <label for="textArea" class="form-label">Message</label>
         <textarea name="message" rows="8" cols="80" class="form-control" required></textarea>
       </div>
-<!-- <input type="submit" value="Send"> -->
+      <!-- <input type="submit" value="Send"> -->
       <button type="submit" class="btn btn-primary submit" value="Send">Submit</button>
     </form>
-</div>
+  </div>
 
 
-<footer>
-  <a class='footer-link' href="https://www.flaticon.com/free-icons/react" title="react icons">React, Bootstrap, JS, Node, CSS, and Html icons created by Freepik - Flaticon</a>
-</footer>
-<!-- Bootstrap 5 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <!-- Sweet Alert  -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <footer>
+    <a class='footer-link' href="https://www.flaticon.com/free-icons/react" title="react icons">React, Bootstrap, JS, Node, CSS, and Html icons created by Freepik - Flaticon</a>
+  </footer>
+  <!-- Bootstrap 5 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  <!-- Sweet Alert  -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-  </body>
+</body>
+
 </html>
