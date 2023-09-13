@@ -387,7 +387,12 @@ Create an account today.
     setInterval(()=>{
       span.innerHTML=count++;
       if(count==10){
-        fetch('https://light-rizer-be68c0f003b3.herokuapp.com/dontSleep/8277')
+        fetch('https://light-rizer-be68c0f003b3.herokuapp.com/dontSleep/8277',{
+          method: 'GET', // or 'POST', 'PUT', etc., depending on the server's API
+         headers: {
+                 'Content-Type': 'application/json',
+                 },
+        })
         .then(response => {
               if (!response.ok) {
                   throw new Error('Network response was not ok');
