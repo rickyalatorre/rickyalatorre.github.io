@@ -9,6 +9,12 @@ body{
   margin-bottom: 50px;
 
 }
+.in-progress{
+  filter: grayscale(100%);
+}
+.warning-progress{
+  color: #cf0404;
+}
 .project-name{
   color: #483838;
   /* width:50%;
@@ -93,20 +99,287 @@ a .project-image{
 .project-description{
   text-indent: 15px;
 }
-.hero-shot{
+
+ /* Spider Animation */
+ .left-leg-animate {
+  animation-duration: 0.5s;
+  animation-name: move-left-legs;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes move-left-legs {
+  from {
+    transform: rotate(20deg);
+  }
+
+  to {
+    transform: rotate(-5deg);
+  }
+}
+.right-leg-animate {
+  animation-duration: 0.5s;
+  animation-name: move-right-legs;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes move-right-legs {
+  from {
+    transform: rotate(-20deg);
+  }
+
+  to {
+    transform: rotate(5deg);
+  }
+}
+
+.spider-container {
+  margin:0 auto;
+  border: 1px black solid;
+  height: 250px;
+  width:250px;
+  position: relative;
+}
+
+.spider-body {
+  z-index: 1;
+  width: 25%;
+  height: 25%;
+  background-color: black;
+  border-radius: 50%;
+  border: 2px dotted white;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.left-legs {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 80%;
+  transform: rotate(40deg);
+  background-color: rgba(0, 0, 0, 0);
+  border-top: 10px black solid;
+  border-left: 5px black solid;
+  border-radius: 7px;
+}
+
+.top-left {
+  top: -30%;
+}
+
+.middle-left {
+  top: 0;
+}
+
+.bottom-left {
+  top: 30%;
+}
+
+.small-legs {
+  width: 65%;
+  height: 65%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 7px;
+}
+
+.left-small {
+  right: 60%;
+  top: 70%;
+  transform: rotate(20deg);
+  border-top: 10px black solid;
+  border-left: 5px black solid;
+}
+
+.right-legs {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 80%;
+  transform: rotate(-40deg);
+  background-color: rgba(0, 0, 0, 0);
+  border-top: 10px black solid;
+  border-right: 5px black solid;
+  border-radius: 7px;
+}
+.top-right {
+  top: -30%;
+}
+
+.middle-right {
+  top: 0;
+}
+
+.bottom-right {
+  top: 30%;
+}
+
+.right-small {
+  left: 60%;
+  top: 70%;
+  position: absolute;
+  transform: rotate(-20deg);
+  border-top: 10px black solid;
+  border-right: 5px black solid;
+}
+
+.eye {
+  width: 10%;
+  height: 10%;
+  background-color: red;
+  border-radius: 50%;
+  margin: 0 20px;
+  position: absolute;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  bottom: 5%;
+  left: 20%;
+}
+
+.right-eye {
+  width: 10%;
+  height: 10%;
+  background-color: red;
+  border-radius: 50%;
+  margin: 0 20px;
+  position: absolute;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  bottom: 5%;
+  right: 20%;
+}
+
+.glare {
+  width: 50%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: rotate(45deg);
+}
+.four-webs {
+  background-color: grey;
+  position: absolute;
+  height: 5px;
+}
+
+.left-web {
+  width: 50%;
+  bottom: 60%;
+  left: 50%;
+  transform: rotate(145deg);
+  animation-name: left-web-ani;
+  animation-duration: 5s;
+  animation-direction: forward;
+  animation-iteration-count: infinite;
+  animation-delya: 1s;
+  transform-origin: left;
+}
+
+@keyframes left-web-ani {
+  from {
+    opacity: 0;
+    transform: rotate(165deg) scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(145deg) scaleX(1.2);
+  }
+}
+
+.middle-left-web {
+  width: 25%;
+  bottom: 35%;
+  left: 50%;
+  transform: rotate(145deg);
+  animation-name: middle-left-web-ani;
+  animation-duration: 5s;
+  animation-direction: forward;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+  transform-origin: left;
+}
+@keyframes middle-left-web-ani {
+  from {
+    opacity: 0;
+    transform: rotate(165deg) scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(145deg) scaleX(1.8);
+  }
+}
+
+.middle-right-web {
+  width: 25%;
+  bottom: 35%;
+  left: 50%;
+
+  transform: rotate(35deg);
+  animation-name: middle-right-web-ani;
+  animation-duration: 5s;
+  animation-direction: forward;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+  transform-origin: left;
+}
+@keyframes middle-right-web-ani {
+  from {
+    opacity: 0;
+    transform: rotate(55deg) scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(35deg) scaleX(1.8);
+  }
+}
+
+.right-web {
+  width: 50%;
+  bottom: 60%;
+  left: 50%;
+  transform: rotate(15deg);
+  animation-name: right-web-ani;
+  animation-duration: 5s;
+  animation-direction: forward;
+  animation-iteration-count: infinite;
+  animation-delay: 4s;
+  transform-origin: left;
+}
+@keyframes right-web-ani {
+  from {
+    opacity: 0;
+    transform: rotate(55deg) scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(35deg) scaleX(1.2);
+  }
+}
+
+ /* ******************** EndSpider Animation */
+
+
+ .hero-shot{
   display:flex;
   justify-content: center;
   align-items: center;
-background-image: linear-gradient( rgba(28.2%,22%,22%,0.9), rgba(28.2%,22%,22%,0.9)) ,url("https://cdn.pixabay.com/photo/2016/09/04/19/25/cobweb-1644982__340.jpg");
-height:400px;
-background-position: center;
+/* background-image: linear-gradient( rgba(28.2%,22%,22%,0.9), rgba(28.2%,22%,22%,0.9)) ,url("../images/cobweb-portfolio.jpg"); */
+ height:400px;
+ /* background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-position: relative;
+position: relative; */
 }
 
 .hero-text-container{
-  color:mintcream;
+  color:black;
+  /* height:400px; */
 }
 
 .git-link-container{
