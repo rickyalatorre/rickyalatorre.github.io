@@ -46,6 +46,11 @@ body{
   padding:12px;
 }
 
+.statement{
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
 .center-text{
   text-align: center;
 }
@@ -136,7 +141,7 @@ a .project-image{
 
 .spider-container {
   margin:0 auto;
-  border: 1px black solid;
+  border: 1px #483838 solid;
   height: 250px;
   width:250px;
   position: relative;
@@ -146,7 +151,7 @@ a .project-image{
   z-index: 1;
   width: 25%;
   height: 25%;
-  background-color: black;
+  background-color: #483838;
   border-radius: 50%;
   border: 2px dotted white;
   margin: 0 auto;
@@ -163,8 +168,8 @@ a .project-image{
   right: 80%;
   transform: rotate(40deg);
   background-color: rgba(0, 0, 0, 0);
-  border-top: 10px black solid;
-  border-left: 5px black solid;
+  border-top: 10px #483838 solid;
+  border-left: 5px #483838 solid;
   border-radius: 7px;
 }
 
@@ -192,8 +197,8 @@ a .project-image{
   right: 60%;
   top: 70%;
   transform: rotate(20deg);
-  border-top: 10px black solid;
-  border-left: 5px black solid;
+  border-top: 10px #483838 solid;
+  border-left: 5px #483838 solid;
 }
 
 .right-legs {
@@ -203,8 +208,8 @@ a .project-image{
   left: 80%;
   transform: rotate(-40deg);
   background-color: rgba(0, 0, 0, 0);
-  border-top: 10px black solid;
-  border-right: 5px black solid;
+  border-top: 10px #483838 solid;
+  border-right: 5px #483838 solid;
   border-radius: 7px;
 }
 .top-right {
@@ -224,14 +229,14 @@ a .project-image{
   top: 70%;
   position: absolute;
   transform: rotate(-20deg);
-  border-top: 10px black solid;
-  border-right: 5px black solid;
+  border-top: 10px #483838 solid;
+  border-right: 5px #483838 solid;
 }
 
 .eye {
   width: 10%;
   height: 10%;
-  background-color: red;
+  background-color:mintcream;
   border-radius: 50%;
   margin: 0 20px;
   position: absolute;
@@ -243,7 +248,7 @@ a .project-image{
 .right-eye {
   width: 10%;
   height: 10%;
-  background-color: red;
+  background-color: mintcream;
   border-radius: 50%;
   margin: 0 20px;
   position: absolute;
@@ -264,8 +269,10 @@ a .project-image{
 }
 .four-webs {
   background-color: grey;
+  opacity:0;
   position: absolute;
-  height: 5px;
+  height: 3px;
+  border-radius: 40px;
 }
 
 .left-web {
@@ -294,7 +301,7 @@ a .project-image{
 
 .middle-left-web {
   width: 25%;
-  bottom: 35%;
+  bottom: 40%;
   left: 50%;
   transform: rotate(145deg);
   animation-name: middle-left-web-ani;
@@ -317,7 +324,7 @@ a .project-image{
 
 .middle-right-web {
   width: 25%;
-  bottom: 35%;
+  bottom: 40%;
   left: 50%;
 
   transform: rotate(35deg);
@@ -454,6 +461,9 @@ footer{
   .project-image{
     width:100%;
   }
+  .statement{
+    width: 55%;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -461,6 +471,7 @@ footer{
   .project-image{
     width:100%;
   }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -468,7 +479,9 @@ footer{
 .center{
   justify-content: flex-start;
 }
+
 }
+
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
