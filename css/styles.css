@@ -141,7 +141,6 @@ a .project-image{
 
 .spider-container {
   margin:0 auto;
-  border: 1px #483838 solid;
   height: 250px;
   width:250px;
   position: relative;
@@ -385,7 +384,7 @@ position: relative; */
 }
 
 .hero-text-container{
-  color:black;
+  color:#483838;
   /* height:400px; */
 }
 
